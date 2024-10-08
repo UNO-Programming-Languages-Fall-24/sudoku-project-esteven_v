@@ -5,7 +5,7 @@
 % A cell (x,y) can be mapped to the subgrid labeled 1+(((x-1)/n)*n+(y-1)/n)
 
 % Your implementation please...
-Num(1..4).
+num(1..4).
 sudoku(1..4, 1..4).
 1 {sudoku(X,Y,N) : num(N} } 1 :- cell(X,Y).
 :- num(N), cell(X,Y1), sudoku(X,Y2), Y1 != Y2, fill(X, Y1, N), fill(X, Y2, N). 
