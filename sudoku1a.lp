@@ -9,6 +9,7 @@
 cell(X, Y) :- X= 1..4, Y= 1..4.
 
 { sudoku (X,Y,N): N=1..4 } = 1 :- cell(X,Y).
+N1=N2 :- sudoku(X1, Y1, N1), initial(X2, Y2, N2), X1=X2, Y1= Y2.
 
 
 %N1 = N2
