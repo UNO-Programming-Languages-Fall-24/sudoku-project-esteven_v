@@ -8,10 +8,12 @@
 % n(1..4).
 cell(X, Y) :- X= 1..4, Y= 1..4.
 
-{ sudoku (X,Y,N): N=1..n } 1 :- cell(X,Y).
+{ sudoku (X,Y,N): N=1..4 } = 1 :- cell(X,Y).
+
+
 %N1 = N2
-:- n(N), n(Y), 2 {sudoku(X,Y,N): n(Y) }
-:- n(N), n(X), 2 {sudoku(X,Y,N): n(X) }
+%:- cell(X,Y), 2 {sudoku(X,Y,N): n(Y) }
+%:- cell(X,Y), 2 {sudoku(X,Y,N): n(X) }
 
 
 #show sudoku/3.
