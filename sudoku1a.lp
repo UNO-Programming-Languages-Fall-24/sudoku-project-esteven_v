@@ -6,8 +6,9 @@
 
 % Your implementation please...
 cell(1..4, 1..4).
-
+n(1..4).
 1 {fill(X,Y,N): n(N) } 1 :- cell(X,Y).
+:- fill(X1,Y1,N), fill(X2,Y2,N), X1 != X2, Y1 != Y2, (X1 - 1) / 2 == (X2 - 1) / 2, (Y1 - 1) / 2 == (Y2 - 1) / 2.
 :- n(N), cell(X, Y1), cell(X, Y2), Y1 != Y2, fill(X, Y1, N), fill(X, Y2, N).
 :- n(N), cell(X1, Y), cell(X2, Y), X1 != X2, fill(X1, Y, N), fill(X2, Y, N).
 
