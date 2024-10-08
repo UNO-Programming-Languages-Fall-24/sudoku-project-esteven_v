@@ -9,9 +9,9 @@ x(1..4).
 y(1..4).
 n(1..4).
 
-{sudoku(X,Y,N): n(N)} =1 :- x(X) ,y(Y).
-:- sudoku(X,Y,N), sudoku(X, Y1, N), Y != Y1.
-:- sudoku(X,Y,N), sudoku(X1, Y, N), X != X1.
-:- suduku(X1, Y1, N), sudoku(X2, Y2, N), (X1 - X2)^2 + (Y1 - Y2)^2 - 2.
+1 {sudoku(X,Y,N): n(N) } 1 :- x(X) ,y(Y).
+:- x(X), n(N), 2 { sudoku(X, Y, N) : y(Y) }.
+:- y(Y), n(N), 2 { sudoku(X, Y, N) : y(Y) }.
+:- n(N), 2{ sudoku(X, Y, N) : x(X1..X2), y(Y1..Y2), X1 = X2, Y1 = Y2}.
 
 #show sudoku/3.
