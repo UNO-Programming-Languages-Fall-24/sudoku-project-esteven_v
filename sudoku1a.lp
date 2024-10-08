@@ -5,13 +5,10 @@
 % A cell (x,y) can be mapped to the subgrid labeled 1+(((x-1)/n)*n+(y-1)/n)
 
 % Your implementation please...
-x(1..4).
-y(1..4).
-n(1..4).
+cell(1..4, 1..4).
 
-1 {sudoku(X,Y,N): n(N) } 1 :- x(X) ,y(Y).
-:- x(X), n(N), 2 { sudoku(X, Y, N) : y(Y) }.
-:- y(Y), n(N), 2 { sudoku(X, Y, N) : y(Y) }.
-:- n(N), 2{ sudoku(X, Y, N) : x(X1..X2), y(Y1..Y2), X1 = X2, Y1 = Y2}.
+1 {fill(X,Y,N): n(N) } 1 :- cell(X,Y).
+:- n(N), cell(X, Y1), cell(X, Y2), Y1 != Y2, fill(X, Y1, N), fill(X, Y2, N).
+:- n(N), cell(X1, Y), cell(X2, Y), X1 != X2, fill(X1, Y, N), fill(X2, Y, N).
 
 #show sudoku/3.
