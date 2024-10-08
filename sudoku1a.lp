@@ -5,16 +5,10 @@
 % A cell (x,y) can be mapped to the subgrid labeled 1+(((x-1)/n)*n+(y-1)/n)
 
 % Your implementation please...
-clingo sudoku1a.lp instances/4x4/ex00.lp 0
-size(4).
-cell(Row,Col,Val) :- 
-  size(N), Row = 1..N, Col = 1..N, Value 1..N.
-1 {cell(Row,Col,Val) : Val = 1..4 } 1 :- Row = 1..4, Col = 1..4.
-
-:- Row = 1..4, Val = 1..4,
-  2 { cell(Row, Col, Value) : Col = 1..4}.
-
-:- Col = 1..4, Val = 1..4,
-  2 { cell(Row, Col, Value) : Row = 1..4}.
+cell(1..4,1..4,).
+1 {val(X,Y,N) : N = 1..4 } 1 :- cell(X,Y).
+:- val(X,Y,N), val(X, Y1, N), Y != Y1.
+:- val(X,Y,N), val(X1, Y, N), X != X1.
+:- val(X1, Y1, N), val(X2, Y2, N), (X1 - X2)^2 + (Y1 - Y2)^2 - 2.
 
 #show sudoku/3.
