@@ -18,5 +18,5 @@ N1=N2 :- sudoku(X1, Y1, N1), initial(X2, Y2, N2), X1=X2, Y1= Y2.
 :- sudoku(X1,Y1,N1), sudoku(X2,Y2,N2), X1=X2, N1=N2, Y1 != Y2.
 :- sudoku(X1,Y1,N1), sudoku(X2,Y2,N2), Y1=Y2, N1=N2, X1 != X2.
 
-#show subgrid/3
+#show subgrid/3.
 #show sudoku/3.
