@@ -5,6 +5,7 @@
 % A cell (x,y) can be mapped to the subgrid labeled 1+(((x-1)/n)*n+(y-1)/n)
 
 % Your implementation please...
+clingo sudoku1a.lp instances/4x4/ex00.lp 0
 size(4).
 cell(Row,Col,Val) :- 
   size(N), Row = 1..N, Col = 1..N, Value 1..N.
