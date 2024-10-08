@@ -6,8 +6,11 @@
 
 % Your implementation please...
 #const n = 4.
-cell(X, Y) :- X= 1..4, Y= 1..4.
-subgrid (X, Y, (((X-1)/n)*n+(Y-1)/n)) :- cell(X,Y).
+%cell(X, Y) :- X= 1..4, Y= 1..4.
+subgrid (X, Y, G=1) :- X=1..2, Y=1..2.
+subgrid (X, Y, G=2) :- X=1..2, Y=3..4.
+subgrid (X, Y, G=3) :- X=3..4, Y=1..2.
+subgrid (X, Y, G=4) :- X=3..4, Y=3..4.
 { sudoku (X,Y,N): N=1..n } = 1 :- subgrid(X,Y, G).
 N1=N2 :- sudoku(X1, Y1, N1), initial(X2, Y2, N2), X1=X2, Y1= Y2.
 
