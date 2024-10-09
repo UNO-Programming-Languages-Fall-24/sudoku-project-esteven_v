@@ -5,6 +5,7 @@
 % A cell (x,y) can be mapped to the subgrid labeled 1+(((x-1)/n)*n+(y-1)/n)
 
 % Your implementation please...
+%problem 1c
 #const n = 4.
 %cell(X, Y) :- X= 1..4, Y= 1..4.
 subgrid (X, Y, G) :- X=1..2, Y=1..2, G=1.
