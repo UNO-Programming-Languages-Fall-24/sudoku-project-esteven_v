@@ -4,7 +4,7 @@
 % For subgrid of size n, subgrids can be identified by labels 1..n*n
 % A cell (x,y) can be mapped to the subgrid labeled 1+(((x-1)/n)*n+(y-1)/n)
 
-% Your implementation please...
+% Your implementation please....
 #const n = 9.
 %cell(X, Y) :- X= 1..9, Y= 1..9.
 subgrid (X, Y, G) :- X=1..3, Y=1..3, G=1.
