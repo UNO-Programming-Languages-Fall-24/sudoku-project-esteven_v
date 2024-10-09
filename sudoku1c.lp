@@ -17,6 +17,8 @@ N1=N2 :- sudoku(X1, Y1, N1), initial(X2, Y2, N2), X1=X2, Y1= Y2.
 
 :- sudoku(X1,Y1,N1), sudoku(X2,Y2,N2), X1=X2, N1=N2, Y1 != Y2.
 :- sudoku(X1,Y1,N1), sudoku(X2,Y2,N2), Y1=Y2, N1=N2, X1 != X2.
-:- subgrid(G), N = 1..4, not 1 { value(X, Y, N) : subgrid(X, Y, G) } 1.
+:- subgrid(X1, Y1, G1), subgrid(X2, Y2, G2), Y1=Y2, G1=G2, X1 != X2.
+:- subgrid(X1, Y1, G1), subgrid(X2, Y2, G2), X1=X2, G1=G2, Y1 != Y2.
+
 
 #show sudoku/3.
